@@ -1,0 +1,39 @@
+import java.util.*; 
+import java.io.*;
+
+class Main {
+
+  public static String LongestWord(String sen) {
+
+    sen = sen + " ";
+
+    String currentLongestWord = "";
+    StringBuilder nextWord = new StringBuilder();
+
+    for (int i = 0; i < sen.length(); i++) {
+      int charAscii = (int) sen.charAt(i);
+
+      if (charAscii >= 65 && charAscii <= 122) {
+        nextWord.append(sen.charAt(i));
+
+      } else {
+
+        if (nextWord.length() > currentLongestWord.length()) {
+          currentLongestWord = nextWord.toString();
+
+        }
+        nextWord.delete(0, nextWord.length());
+        
+      }
+    }
+
+    return currentLongestWord;
+  }
+
+  public static void main (String[] args) {  
+    // keep this function call here     
+    Scanner s = new Scanner(System.in);
+    System.out.print(LongestWord(s.nextLine())); 
+  }
+
+}
