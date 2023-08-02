@@ -1,0 +1,9 @@
+public class Program {
+    public static int addUp(int num) {
+        int total = 0;
+        while (total <= num) {
+            total += total;
+            total++;
+        }
+    }
+}
